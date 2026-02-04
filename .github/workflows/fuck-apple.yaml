@@ -1,0 +1,21 @@
+name: Fuck Apple
+on:
+  push:
+    branches:
+      - NEO-TAT/tat_flutter/250
+  workflow_dispatch:
+
+jobs:
+  fuck:
+    runs-on: macos-latest
+    steps:
+      - name: Select Xcode 16
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16'
+
+      - name: Check Xcode Version
+        run: |
+          xcode-select -p
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
